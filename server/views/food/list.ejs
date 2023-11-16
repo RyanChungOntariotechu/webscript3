@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!--CSS files-->
+  <link rel='stylesheet' href='/Content/style.css' />
+  <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel='stylesheet' href="/@fortawesome/fontawesome-free/css/all.min.css" />
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">INFR3120</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+      
+          <a class="nav-link" href="/home"><i class="fa-solid fa-house"> </i> Home</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutme"><i class="fa-solid fa-gear"></i> About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contactme"><i class="fa-regular fa-address-book"></i> Contact Me</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!--navbar-->
+<!--footer-->
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+  <h6 class="display-6 navbar-text">&copy; Copyright 2023. All Rights Reserved.</h6>
+</nav>
+<!--footer-->
+<main class = "container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-10">
+        <h1> <%=title%></h1>
+          <a href="/foodtracker/add" class="btn btn-primary" role="button"></a>
+              <i class= "fas fa-plus-circle"></i> Add a Food </a>
+        <br>
+      <table class= "table table-bordered table-striped table-hover">
+      <tr class="d-flex">
+        <th class ="text-center col-2">name</th>
+        <th class ="text-center col-5">description</th>
+        <th class ="text-center col-3">Calories</th>
+        <th class ="text-center col-1">cost</th>
+        <th class ="text-center col-1"></th>
+        <th class ="text-center col-1"></th>
+        </td>
+      <% for(let count=0; count< foodtracker.length; count++) { %>
+          <tr class="d-flex">
+            <td class ="text-center col-2"><%= foodtracker[count].name %></td>
+            <td class ="text-center col-5"><%= foodtracker[count].description %></td>
+            <td class ="text-center col-3"><%= foodtracker[count].Calories %></td>
+            <td class ="text-center col-1"><%= foodtracker[count].cost %></td>
+            <td class ="text-center col-1">
+              <a href="/foodtracker/edit/<%= foodtracker[count]._id %>"
+                class="btn btn-primary">
+                <i class="fas fa-pencil-all"></i> Edit </td>
+            </td>
+            <td class ="text-center col-1">
+                <a href="/foodtracker/delete/<%= foodtracker[count]._id %>"
+                  class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i> Delete </td>
+                </td>
+
+            
+
+          </tr>
+        <% } %>
+        </tr>
+        </table>
+        </div>
+    </div>
+    </div>
+    </main>
+  <!--Script files-->
+  <script src = "/Scripts/app.js"></script>
+  <script src = "/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src = "/jquery/dist/jquery.min.js"></script>
+  
+</body>
+</html>
+

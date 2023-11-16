@@ -1,0 +1,65 @@
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Food</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the food name"
+                    name="name" 
+                    value="<%= food.name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Description</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Enter the a brief description of the food"
+                    name="description" 
+                    required>
+                    <%= food.Description %>
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="CaloriesTextField">Year</label>
+                    <input type="text" class="form-control"
+                    id="CaloriesTextField"
+                    placeholder="Enter the Calories"
+                    name="Calories" 
+                    value="<%= food.Calories %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="costTextField">Cost</label>
+                    <input type="text" class="form-control"
+                    id="costTextField"
+                    placeholder="Enter the foods cost"
+                    name="cost" 
+                    value="<%= food.cost %>"
+                    required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/foodtracker" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <a class="navbar-brand" href="#"> @2023 Ryan Chung</a>
+</nav>

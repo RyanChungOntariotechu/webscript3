@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!--CSS files-->
+  <link rel='stylesheet' href='/Content/style.css' />
+  <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel='stylesheet' href="/@fortawesome/fontawesome-free/css/all.min.css" />
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">INFR3120</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+      
+          <a class="nav-link" href="/home"><i class="fa-solid fa-house"> </i> Home</a>
+          
+        </li>
+        
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutme"><i class="fa-solid fa-gear"></i> About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/foodtracker"><i class="fa-solid fa-bowl-food"></i></i> Food Tracker </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contactme"><i class="fa-regular fa-address-book"></i> Contact Me</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!--navbar-->
+
+<!--main--> 
+
+<div class="jumbotron">
+  <h1>Welcome to the <%= title %> Page</h1>
+  <hr class="my-4">
+  <p class="lead"> <%= content %> </p>
+</div>
+<!--main-->
+<!--footer-->
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+  <h6 class="display-6 navbar-text">&copy; Copyright 2023. All Rights Reserved.</h6>
+</nav>
+<!--footer-->
+
+  <!--Script files-->
+  <script src = "/Scripts/app.js"></script>
+  <script src = "/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src = "/jquery/dist/jquery.min.js"></script>
+  <!-- Pages Configs-->
+  <% if (title=="About Me") { %>
+
+<section class="about-section">
+        <img class="img-toronto" src="/assets/images/IMG_0285.jpg" alt="Ryan Chung" width="200"> 
+        <p> </p>            
+        <!-- Embedded Video -->
+        <video controls poster="WIN_20231001_15_45_48_Pro.mp4" width="500">
+            <source src="/assets/images/WIN_20231001_15_45_48_Pro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>   
+<%} else {%>
+<% } %>
+
+<% if (title=="Projects") { %>
+  <a href="/project1"></a>
+  <a href="/assets/images/project1.ipynb"> BMI Calculator Python Code </a>
+
+  <p> <p>
+<%} else {%>
+            
+<% } %>
+
+<% if (title=="Contact Me") { %>
+            <form action="/submit" method="POST">
+              <label for="Full Name"> Full name: </label>
+              <input type="text" id="username" name="username" required>
+              <br>
+              <p> </p>
+              <label for="email"> Email:     </label>
+              <input type="Email" id="email" name="email" required>
+              <br>
+              <p> </p>
+              <label for="comments"> Comments: </label>
+              <input type="comments" id="comments" name="comments" required>
+              <br>
+              <p> </p>
+              <input type="submit" value="Submit">
+            </form>
+
+          <%} else {%>
+            
+          <% } %>
+
+</body>
+</html>
+
